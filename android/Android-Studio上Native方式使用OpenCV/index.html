@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://cxuef.github.io/PostImage/GrayProcess.png">
 <meta property="og:image" content="http://cxuef.github.io/PostImage/GrayProcess_CPP.png">
 <meta property="og:image" content="http://cxuef.github.io/PostImage/OpenCVResult.gif">
-<meta property="og:updated_time" content="2018-03-06T02:17:32.000Z">
+<meta property="og:updated_time" content="2018-07-14T07:38:01.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio上Native方式使用OpenCV">
 <meta name="twitter:description" content="开始之前先说下native方式使用OpenCV的好处吧，坏处我不说，嘿嘿。  native函数执行效率高，速度快 不用安装可恶的OpenCVManger.apk 大量可复用C++代码，不用苦逼地查找这个api在java的哪个类">
@@ -222,9 +222,9 @@ var _hmt = _hmt || [];
 <ul>
 <li>native函数执行效率高，速度快</li>
 <li>不用安装可恶的OpenCVManger.apk</li>
-<li>大量可复用C++代码，不用苦逼地查找这个api在java的哪个类<br><img src="/PostImage/opencv_android_ndk.png" alt="opencv android ndk"><a id="more"></a>
-</li>
+<li>大量可复用C++代码，不用苦逼地查找这个api在java的哪个类<br><img src="/PostImage/opencv_android_ndk.png" alt="opencv android ndk"></li>
 </ul>
+<a id="more"></a>
 <p>好啦，直奔主题喽。新建项目的过程这里也不赘述了，我们直接看关键的修改地方吧。<br><strong> 1. 新建app\src\main\jni\Android.mk文件，内容如下： </strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH := $(call my-dir)</span><br><span class="line"></span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line"></span><br><span class="line">#opencv</span><br><span class="line">include /home/eirot/MyDev/Opencv/OpenCV-android-sdk/sdk/native/jni/OpenCV.mk</span><br><span class="line">OPENCV_CAMERA_MODULES:=on</span><br><span class="line">OPENCV_INSTALL_MODULES:=on</span><br><span class="line">OPENCV_LIB_TYPE:=SHARED</span><br><span class="line"></span><br><span class="line">LOCAL_SRC_FILES := GrayProcess.cpp</span><br><span class="line"></span><br><span class="line">LOCAL_LDLIBS += -llog</span><br><span class="line">LOCAL_MODULE := grayprocess</span><br><span class="line"></span><br><span class="line">include $(BUILD_SHARED_LIBRARY)</span><br></pre></td></tr></table></figure></p>
 <p>其中，/home/eirot/MyDev/Opencv/OpenCV-android-sdk/sdk/native/jni/OpenCV.mk要指向你自己的OpenCV Android SDK中对应文件的位置。<br>OPENCV_CAMERA_MODULES:=on 说明要使用摄像头功能，我们的demo中虽然没有用到，但是平时写程序时经常会忘记在这里添加，所以一并写上了。<br>OPENCV_INSTALL_MODULES:=on 可以理解为，编译器自动把OpenCV-android-sdk\sdk\native\libs\armeabi-v7a\libopencv_java3.so拷贝并打包在最终的apk中（目标架构armeabi-v7a因目标设备而定），这也是不需要我们手动向项目内添加任何OpenCV相关库文件的原因。<br>LOCAL_SRC_FILES 是需要编译的C/C++源码文件，如果有多个文件，只需要用空格将文件名分隔，如果文件名太多需要换行，则在前一行行末添加一个“\”符号即可。<br>LOCAL_MODULE 是编译产生的.so库的名称，应该与MainActivity.java中通过System.loadLibrary(“grayprocess”);调用的库名称一致。</p>
 <p><strong> 2. 新建app\src\main\jni\Application.mk文件，内容如下： </strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">APP_STL := gnustl_shared</span><br><span class="line">APP_CPPFLAGS := -frtti -fexceptions -std=c++11</span><br><span class="line">APP_ABI := armeabi-v7a arm64-v8a</span><br><span class="line">APP_PLATFORM := android-21</span><br></pre></td></tr></table></figure></p>
@@ -513,19 +513,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Jni</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,6 +537,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DeskClock</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
               </li>
              
@@ -545,7 +549,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DeskClock</a>
+                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,10 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mount</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
