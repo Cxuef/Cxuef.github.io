@@ -76,8 +76,6 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">所有文章</a></li>
-	        
 				<li><a href="/categories/心晴">心晴</a></li>
 	        
 				<li><a href="/categories/android">Android</a></li>
@@ -92,10 +90,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -150,8 +144,6 @@ var _hmt = _hmt || [];
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -172,17 +164,15 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/archives">所有文章</a></li>
+					<li style="width: 20%"><a href="/categories/心晴">心晴</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categories/心晴">心晴</a></li>
+					<li style="width: 20%"><a href="/categories/android">Android</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categories/android">Android</a></li>
+					<li style="width: 20%"><a href="/categories/linux">Linux</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categories/linux">Linux</a></li>
-		        
-					<li style="width: 16.666666666666668%"><a href="/categories/devtools">Devtools</a></li>
+					<li style="width: 20%"><a href="/categories/devtools">Devtools</a></li>
 		        
 				</ul>
 			</nav>
@@ -222,12 +212,12 @@ var _hmt = _hmt || [];
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer title author url [picture_url, narrow, autoplay] %&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>Wrap the arguments within a string literal, for example:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">"Caffeine"</span> <span class="string">"Jeff Williams"</span> <span class="string">"caffeine.mp3"</span> <span class="string">"autoplay"</span> %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Show it now :<br>
-        <div id="aplayer-LSpOhVUj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-xhLMAIdb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-LSpOhVUj"),
+            element: document.getElementById("aplayer-xhLMAIdb"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -243,12 +233,12 @@ var _hmt = _hmt || [];
           window.aplayers.push(ap);
         </script></p>
 <p>Add the local music:<br>
-        <div id="aplayer-qHxdRtAQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-FHCqISVZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-qHxdRtAQ"),
+            element: document.getElementById("aplayer-FHCqISVZ"),
             narrow: true,
             autoplay: false,
             showlrc: false,
@@ -479,25 +469,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -518,19 +500,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Android Studio</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Jni</a>
+                <a href="javascript:void(0)" class="js-tag color1">music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,6 +513,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自定义View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenCV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Jni</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,15 +536,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,6 +549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mount</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,11 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">widget</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
+                <a href="javascript:void(0)" class="js-tag color2">widget</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -610,15 +592,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ccache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">google play</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">apk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ccache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,22 +662,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://litten.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>litten的博客</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.jianshu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>简书</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
